@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smartflow – Prozesse. Einfach. Digital.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ivory:#FAFAF7;
+  --stone:#F0EFE9;
+  --ink:#1A1A18;
+  --muted:#6B6B62;
+  --accent:#1D6F5B;
+  --accent-light:#E1F5EE;
+  --accent-mid:#0F6E56;
+  --border:#E2E0D8;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--ink);font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border);background:var(--ivory);position:sticky;top:0;z-index:100}
+.logo{font-family:'DM Serif Display',serif;font-size:1.5rem;letter-spacing:-0.02em;color:var(--ink)}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:0.9rem;color:var(--muted);font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--accent);color:#fff !important;padding:0.5rem 1.25rem;border-radius:6px;font-size:0.875rem;font-weight:500;transition:background 0.2s !important}
+.nav-cta:hover{background:var(--accent-mid) !important;color:#fff !important}
+
+.hero{padding:6rem 3rem 5rem;max-width:860px;margin:0 auto;text-align:center}
+.hero-tag{display:inline-block;background:var(--accent-light);color:var(--accent-mid);font-size:0.8rem;font-weight:500;padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1.75rem;letter-spacing:0.03em}
+h1{font-family:'DM Serif Display',serif;font-size:3.5rem;line-height:1.15;letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--ink)}
+h1 em{color:var(--accent);font-style:normal}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:560px;margin:0 auto 2.5rem;font-weight:300;line-height:1.7}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:0.85rem 2rem;border-radius:8px;font-size:0.95rem;font-weight:500;border:none;cursor:pointer;transition:background 0.2s}
+.btn-primary:hover{background:var(--accent-mid)}
+.btn-secondary{background:transparent;color:var(--ink);padding:0.85rem 2rem;border-radius:8px;font-size:0.95rem;font-weight:400;border:1px solid var(--border);cursor:pointer;transition:border-color 0.2s}
+.btn-secondary:hover{border-color:#aaa}
+
+.stats-bar{background:var(--stone);padding:2rem 3rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1100px;margin:0 auto;display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent)}
+.stat-label{font-size:0.8rem;color:var(--muted)}
+
+.section{padding:5rem 3rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;color:var(--accent);text-transform:uppercase;margin-bottom:0.75rem}
+h2{font-family:'DM Serif Display',serif;font-size:2.25rem;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem}
+.section-sub{color:var(--muted);max-width:520px;font-size:1rem;font-weight:300;line-height:1.7;margin-bottom:3rem}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.service-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;transition:border-color 0.2s}
+.service-card:hover{border-color:var(--accent)}
+.service-icon{width:44px;height:44px;background:var(--accent-light);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.25rem}
+.service-card h3{font-size:1.05rem;font-weight:500;margin-bottom:0.5rem;letter-spacing:-0.01em}
+.service-card p{font-size:0.9rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+.how-strip{background:var(--stone);padding:5rem 3rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.how-inner{max-width:1100px;margin:0 auto}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}
+.step{text-align:center;padding:1.5rem 1rem}
+.step-num{font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--accent-light);line-height:1;margin-bottom:0.75rem;-webkit-text-stroke:1.5px var(--accent)}
+.step h3{font-size:0.95rem;font-weight:500;margin-bottom:0.4rem}
+.step p{font-size:0.85rem;color:var(--muted);font-weight:300;line-height:1.6}
+
+.demo-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-bottom:1.5rem}
+.demo-placeholder{background:var(--stone);border-radius:10px;height:180px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.9rem;border:2px dashed var(--border);margin-top:1.5rem}
+
+.promise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+.promise-item{padding:1.5rem;background:var(--stone);border-radius:10px}
+.promise-check{color:var(--accent);font-size:1.1rem;margin-bottom:0.5rem}
+.promise-item h4{font-size:0.95rem;font-weight:500;margin-bottom:0.25rem}
+.promise-item p{font-size:0.85rem;color:var(--muted);font-weight:300}
+
+.cta-band{background:var(--ink);color:#fff;padding:5rem 3rem;text-align:center}
+.cta-band h2{color:#fff;font-family:'DM Serif Display',serif;font-size:2.5rem;margin-bottom:1rem}
+.cta-band p{color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 2rem;font-weight:300}
+.btn-light{background:#fff;color:var(--ink);padding:0.9rem 2.25rem;border-radius:8px;font-size:0.95rem;font-weight:500;border:none;cursor:pointer}
+
+footer{background:var(--ivory);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.1rem}
+.footer-logo span{color:var(--accent)}
+footer p{font-size:0.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">smart<span>flow</span></div>
+  <div class="nav-links">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#demos">Demos</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#kontakt" class="nav-cta">Gespräch buchen</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">✦ AI & Prozessberatung für Schweizer KMUs</div>
+  <h1>Ihr Business. <em>Smarter.</em><br>Ohne IT-Kauderwelsch.</h1>
+  <p>Wir analysieren Ihre Abläufe, zeigen wo AI wirklich hilft – und setzen es mit Ihnen um. Verständlich, pragmatisch, messbar.</p>
+  <div class="hero-actions">
+    <button class="btn-primary">Kostenloses Erstgespräch</button>
+    <button class="btn-secondary">Demos ansehen →</button>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">kein Tech-Jargon</div></div>
+    <div class="stat"><div class="stat-num">Remote</div><div class="stat-label">oder vor Ort, Schweiz</div></div>
+    <div class="stat"><div class="stat-num">Fix</div><div class="stat-label">transparente Preise</div></div>
+    <div class="stat"><div class="stat-num">Schnell</div><div class="stat-label">erste Ergebnisse in Tagen</div></div>
+  </div>
+</div>
+
+<div class="section" id="leistungen">
+  <div class="section-label">Leistungen</div>
+  <h2>Was wir für Sie tun</h2>
+  <p class="section-sub">Von der Analyse bis zur Umsetzung – wir begleiten Sie durch jeden Schritt, ohne Sie mit Technik zu überfordern.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Prozessanalyse & -optimierung</h3>
+      <p>Wir schauen genau hin, wo Zeit und Geld verloren gehen – und zeigen einfache Wege zur Verbesserung.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3>AI-Integration</h3>
+      <p>ChatGPT, Copilot, RAG-Systeme – wir finden heraus, welche AI-Tools wirklich zu Ihrem Betrieb passen.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <h3>Chatbots & Automatisierung</h3>
+      <p>Kundenkontakt, interne FAQs, Bestellprozesse – viele Aufgaben lassen sich einfach automatisieren.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Business & IT Consulting</h3>
+      <p>Strategie, Digitalisierung, Tools – wir beraten herstellerunabhängig und mit Blick aufs Wesentliche.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>AI Workshop (2h)</h3>
+      <p>Ihr Team lernt, wie AI im Alltag konkret hilft. Praktisch, hands-on, sofort anwendbar. Ab CHF 400.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Kurzanalyse</h3>
+      <p>Ein halber Tag, ein klarer Bericht. Sie wissen danach genau, wo die grössten Hebel liegen. Ab CHF 600.</p>
+    </div>
+  </div>
+</div>
+
+<div class="how-strip" id="ablauf">
+  <div class="how-inner">
+    <div class="section-label">So funktioniert es</div>
+    <h2>Vom Gespräch zur Lösung</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Kostenloses Erstgespräch</h3>
+        <p>30 Minuten, keine Verpflichtung. Wir hören zu und verstehen Ihre Situation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Analyse & Empfehlung</h3>
+        <p>Wir schauen uns Ihre Abläufe an und zeigen klare, priorisierte Massnahmen.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Umsetzung</h3>
+        <p>Gemeinsam setzen wir um – in Ihrem Tempo, verständlich erklärt.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Ergebnis messbar</h3>
+        <p>Sie sehen den Unterschied. Zeit gespart, Fehler reduziert, Team entlastet.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="demos">
+  <div class="section-label">Live-Demos</div>
+  <h2>Sehen Sie AI in Aktion</h2>
+  <p class="section-sub">Hier finden Sie bald interaktive Demos – echte Tools, die wir für Schweizer KMUs gebaut haben.</p>
+  <div class="demo-card">
+    <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.25rem">Demo 1</div>
+    <div style="font-weight:500;font-size:1.05rem">Chatbot für Kundenfragen</div>
+    <div class="demo-placeholder">→ Demo wird bald verfügbar sein</div>
+  </div>
+  <div class="demo-card">
+    <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.25rem">Demo 2</div>
+    <div style="font-weight:500;font-size:1.05rem">Prozessanalyse mit AI</div>
+    <div class="demo-placeholder">→ Demo wird bald verfügbar sein</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Unser Versprechen</div>
+  <h2>Was Sie von uns erwarten dürfen</h2>
+  <div class="promise-grid">
+    <div class="promise-item">
+      <div class="promise-check">✓</div>
+      <h4>Kein IT-Kauderwelsch</h4>
+      <p>Wir erklären alles auf Deutsch – klar und verständlich.</p>
+    </div>
+    <div class="promise-item">
+      <div class="promise-check">✓</div>
+      <h4>Transparente Preise</h4>
+      <p>Fixpreise, keine Überraschungen. Sie wissen immer, was es kostet.</p>
+    </div>
+    <div class="promise-item">
+      <div class="promise-check">✓</div>
+      <h4>Herstellerunabhängig</h4>
+      <p>Wir empfehlen, was wirklich passt – nicht was Provision bringt.</p>
+    </div>
+    <div class="promise-item">
+      <div class="promise-check">✓</div>
+      <h4>Remote & flexibel</h4>
+      <p>Wir arbeiten von überall – für Sie in der ganzen Schweiz.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band" id="kontakt">
+  <h2>Bereit für den ersten Schritt?</h2>
+  <p>30 Minuten, kostenlos, unverbindlich. Danach wissen Sie, ob wir zusammenpassen.</p>
+  <button class="btn-light">Jetzt Gespräch buchen →</button>
+</div>
+
+<footer>
+  <div class="footer-logo">smart<span>flow</span></div>
+  <p>© 2025 Smartflow · Schweiz · kontakt@smartflow.ch</p>
+  <p>Datenschutz · Impressum</p>
+</footer>
+
+</body>
+</html>
