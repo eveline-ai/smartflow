@@ -59,6 +59,43 @@ h2{font-family:'DM Serif Display',serif;font-size:2.25rem;letter-spacing:-0.02em
 .service-card h3{font-size:1.05rem;font-weight:500;margin-bottom:0.5rem;letter-spacing:-0.01em}
 .service-card p{font-size:0.9rem;color:var(--muted);line-height:1.6;font-weight:300}
 
+/* Featured service card – AI Data Engineering */
+.service-card.featured{
+  border-color:var(--accent);
+  background:linear-gradient(135deg,var(--accent-light) 0%,#fff 60%);
+  position:relative;
+  overflow:hidden;
+}
+.service-card.featured::before{
+  content:'Neu';
+  position:absolute;
+  top:1rem;right:1rem;
+  background:var(--accent);
+  color:#fff;
+  font-size:0.7rem;
+  font-weight:500;
+  padding:0.2rem 0.6rem;
+  border-radius:20px;
+  letter-spacing:0.04em;
+}
+.service-card.featured:hover{border-color:var(--accent-mid)}
+.service-card.featured .service-icon{background:var(--accent);font-size:1.3rem}
+.service-card.featured .data-pillars{
+  margin-top:1rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.4rem;
+}
+.service-card.featured .data-pillars span{
+  font-size:0.75rem;
+  color:var(--accent-mid);
+  background:var(--accent-light);
+  border:1px solid rgba(29,111,91,0.25);
+  padding:0.2rem 0.6rem;
+  border-radius:20px;
+  font-weight:500;
+}
+
 .how-strip{background:var(--stone);padding:5rem 3rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .how-inner{max-width:1100px;margin:0 auto}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}
@@ -93,7 +130,7 @@ footer p{font-size:0.8rem;color:var(--muted)}
   <div class="logo">smart<span>flow</span></div>
   <div class="nav-links">
     <a href="#leistungen">Leistungen</a>
-<a href="smartflow-chatbot-demo.html">Demos</a>
+    <a href="smartflow-chatbot-demo.html">Demos</a>
     <a href="#ablauf">Ablauf</a>
     <a href="#kontakt" class="nav-cta">Gespräch buchen</a>
   </div>
@@ -123,6 +160,20 @@ footer p{font-size:0.8rem;color:var(--muted)}
   <h2>Was wir für Sie tun</h2>
   <p class="section-sub">Von der Analyse bis zur Umsetzung – wir begleiten Sie durch jeden Schritt, ohne Sie mit Technik zu überfordern.</p>
   <div class="services-grid">
+
+    <!-- Neue Dienstleistung: AI Data Engineering & Preparation -->
+    <div class="service-card featured">
+      <div class="service-icon">🗄️</div>
+      <h3>AI Data Engineering &amp; Preparation</h3>
+      <p>Die meisten KI-Projekte scheitern nicht an der KI – sondern am Datenchaos davor. Wie ein ERP ohne Datenmigration. Wir bereiten Ihre sensiblen Firmendaten so auf, dass ein lokales, DSGVO-konformes KI-Modell sie fehlerfrei lesen kann.</p>
+      <div class="data-pillars">
+        <span>🔒 Volle Datenhoheit</span>
+        <span>🇨🇭 DSGVO-konform</span>
+        <span>☁️ Keine Cloud-Gebühren</span>
+        <span>📐 Präzise Ergebnisse</span>
+      </div>
+    </div>
+
     <div class="service-card">
       <div class="service-icon">⚙️</div>
       <h3>Prozessanalyse & -optimierung</h3>
