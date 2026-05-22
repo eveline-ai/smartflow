@@ -59,7 +59,6 @@ h2{font-family:'DM Serif Display',serif;font-size:2.25rem;letter-spacing:-0.02em
 .service-card h3{font-size:1.05rem;font-weight:500;margin-bottom:0.5rem;letter-spacing:-0.01em}
 .service-card p{font-size:0.9rem;color:var(--muted);line-height:1.6;font-weight:300}
 
-/* Featured service card – AI Data Engineering */
 .service-card.featured{
   border-color:var(--accent);
   background:linear-gradient(135deg,var(--accent-light) 0%,#fff 60%);
@@ -132,12 +131,18 @@ h2{font-family:'DM Serif Display',serif;font-size:2.25rem;letter-spacing:-0.02em
 .cta-band{background:var(--ink);color:#fff;padding:5rem 3rem;text-align:center}
 .cta-band h2{color:#fff;font-family:'DM Serif Display',serif;font-size:2.5rem;margin-bottom:1rem}
 .cta-band p{color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 2rem;font-weight:300}
+.cta-contact{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center}
+.cta-contact a{color:rgba(255,255,255,0.75);font-size:0.9rem;font-weight:300;transition:color 0.2s}
+.cta-contact a:hover{color:#fff}
 .btn-light{background:#fff;color:var(--ink);padding:0.9rem 2.25rem;border-radius:8px;font-size:0.95rem;font-weight:500;border:none;cursor:pointer}
 
 footer{background:var(--ivory);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-logo{font-family:'DM Serif Display',serif;font-size:1.1rem}
 .footer-logo span{color:var(--accent)}
 footer p{font-size:0.8rem;color:var(--muted)}
+.footer-contact{display:flex;flex-wrap:wrap;gap:1.25rem;font-size:0.8rem;color:var(--muted)}
+.footer-contact a{color:var(--muted);transition:color 0.2s}
+.footer-contact a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -157,7 +162,7 @@ footer p{font-size:0.8rem;color:var(--muted)}
   <h1>Ihr Business. <em>Smarter.</em><br>Ohne IT-Kauderwelsch.</h1>
   <p>Wir analysieren Ihre Abläufe, zeigen wo AI wirklich hilft – und setzen es mit Ihnen um. Verständlich, pragmatisch, messbar.</p>
   <div class="hero-actions">
-    <button class="btn-primary">Kostenloses Erstgespräch</button>
+    <a href="mailto:eveline.schuepbach@gmail.com"><button class="btn-primary">Kostenloses Erstgespräch</button></a>
     <a href="smartflow-chatbot-demo.html"><button class="btn-secondary">Demos ansehen →</button></a>
   </div>
 </div>
@@ -177,7 +182,6 @@ footer p{font-size:0.8rem;color:var(--muted)}
   <p class="section-sub">Von der Analyse bis zur Umsetzung – wir begleiten Sie durch jeden Schritt, ohne Sie mit Technik zu überfordern.</p>
   <div class="services-grid">
 
-    <!-- Neue Dienstleistung: AI Data Engineering & Preparation -->
     <div class="service-card featured">
       <div class="service-icon">🗄️</div>
       <h3>AI Data Engineering &amp; Preparation</h3>
@@ -188,7 +192,7 @@ footer p{font-size:0.8rem;color:var(--muted)}
         <span>☁️ Keine Cloud-Gebühren</span>
         <span>📐 Präzise Ergebnisse</span>
       </div>
-      <a href="#kontakt"><button class="btn-book">Jetzt buchen →</button></a>
+      <a href="mailto:eveline.schuepbach@gmail.com"><button class="btn-book">Jetzt buchen →</button></a>
     </div>
 
     <div class="service-card">
@@ -299,12 +303,22 @@ footer p{font-size:0.8rem;color:var(--muted)}
 <div class="cta-band" id="kontakt">
   <h2>Bereit für den ersten Schritt?</h2>
   <p>30 Minuten, kostenlos, unverbindlich. Danach wissen Sie, ob wir zusammenpassen.</p>
-  <button class="btn-light">Jetzt Gespräch buchen →</button>
+  <a href="mailto:eveline.schuepbach@gmail.com"><button class="btn-light">Jetzt Gespräch buchen →</button></a>
+  <div class="cta-contact">
+    <a href="mailto:eveline.schuepbach@gmail.com">✉ eveline.schuepbachr@gmail.com</a>
+    <a href="tel:+041 647 41 42">📞 076 647 41 42</a>
+    <span>👤 Eveline Schüpbach</span>
+  </div>
 </div>
 
 <footer>
   <div class="footer-logo">smart<span>flow</span></div>
-  <p>© 2025 Smartflow · Schweiz · kontakt@smartflow.ch</p>
+  <div class="footer-contact">
+    <a href="mailto:eveline.schuepbach@gmail.com">eveline.schuepbach@gmail.com</a>
+    <a href="tel:+41 76 647 41 42">076 647 41 42</a>
+    <span>Eveline Schüpabch</span>
+  </div>
+  <p>© 2025 Eveline Schüpbach Consulting · Schweiz</p>
   <p>Datenschutz · Impressum</p>
 </footer>
 
