@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demos – Smartflow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ivory:#FAFAF7;
+  --stone:#F0EFE9;
+  --ink:#1A1A18;
+  --muted:#6B6B62;
+  --accent:#1D6F5B;
+  --accent-light:#E1F5EE;
+  --accent-mid:#0F6E56;
+  --border:#E2E0D8;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--ink);font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border);background:var(--ivory);position:sticky;top:0;z-index:100}
+.logo{font-family:'DM Serif Display',serif;font-size:1.5rem;letter-spacing:-0.02em;color:var(--ink)}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:0.9rem;color:var(--muted);font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--ink);font-weight:500}
+.nav-cta{background:var(--accent);color:#fff !important;padding:0.5rem 1.25rem;border-radius:6px;font-size:0.875rem;font-weight:500;transition:background 0.2s !important}
+.nav-cta:hover{background:var(--accent-mid) !important;color:#fff !important}
+
+.page-header{padding:4rem 3rem 3rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;color:var(--accent);text-transform:uppercase;margin-bottom:0.75rem}
+.page-header h1{font-family:'DM Serif Display',serif;font-size:2.75rem;letter-spacing:-0.03em;line-height:1.15;margin-bottom:1rem}
+.page-header p{color:var(--muted);font-size:1rem;font-weight:300;max-width:500px;line-height:1.7}
+
+.demos-container{max-width:1100px;margin:0 auto;padding:0 3rem 5rem;display:flex;flex-direction:column;gap:2rem}
+
+/* Live Demo Card */
+.demo-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color 0.2s}
+.demo-card:hover{border-color:var(--accent)}
+
+.demo-card-header{padding:1.75rem 2rem 1.5rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--border)}
+.demo-meta{display:flex;flex-direction:column;gap:0.35rem}
+.demo-number{font-size:0.75rem;font-weight:500;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
+.demo-title{font-size:1.1rem;font-weight:500;letter-spacing:-0.01em}
+.demo-desc{font-size:0.875rem;color:var(--muted);font-weight:300;max-width:480px;line-height:1.6;margin-top:0.25rem}
+.demo-badges{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem}
+.badge{font-size:0.72rem;font-weight:500;padding:0.2rem 0.65rem;border-radius:20px}
+.badge-live{background:var(--accent-light);color:var(--accent-mid);border:1px solid rgba(29,111,91,0.2)}
+.badge-soon{background:var(--stone);color:var(--muted);border:1px solid var(--border)}
+
+.demo-actions{display:flex;gap:0.75rem;align-items:center;flex-shrink:0}
+.btn-open{background:var(--accent);color:#fff;padding:0.55rem 1.2rem;border-radius:7px;font-size:0.85rem;font-weight:500;border:none;cursor:pointer;transition:background 0.2s;white-space:nowrap}
+.btn-open:hover{background:var(--accent-mid)}
+.btn-toggle{background:transparent;color:var(--ink);padding:0.55rem 1.2rem;border-radius:7px;font-size:0.85rem;font-weight:400;border:1px solid var(--border);cursor:pointer;transition:border-color 0.2s;white-space:nowrap}
+.btn-toggle:hover{border-color:#aaa}
+
+/* iFrame embed */
+.demo-embed{background:var(--stone);overflow:hidden;max-height:0;transition:max-height 0.4s ease}
+.demo-embed.open{max-height:700px}
+.demo-embed iframe{width:100%;height:650px;border:none;display:block}
+
+/* Placeholder card */
+.demo-card.placeholder{border-style:dashed;background:transparent}
+.demo-card.placeholder:hover{border-color:var(--accent)}
+.demo-placeholder-body{padding:2.5rem 2rem;display:flex;align-items:center;gap:1.5rem}
+.placeholder-icon{width:48px;height:48px;background:var(--stone);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.placeholder-text h3{font-size:0.95rem;font-weight:500;margin-bottom:0.25rem;color:var(--muted)}
+.placeholder-text p{font-size:0.85rem;color:var(--muted);font-weight:300}
+
+footer{background:var(--ivory);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.1rem}
+.footer-logo span{color:var(--accent)}
+footer p{font-size:0.8rem;color:var(--muted)}
+.footer-contact{display:flex;flex-wrap:wrap;gap:1.25rem;font-size:0.8rem;color:var(--muted)}
+.footer-contact a{color:var(--muted);transition:color 0.2s}
+.footer-contact a:hover{color:var(--ink)}
+
+@media(max-width:640px){
+  nav{padding:1rem 1.25rem}
+  .nav-links{gap:1rem}
+  .page-header{padding:2.5rem 1.25rem 2rem}
+  .page-header h1{font-size:2rem}
+  .demos-container{padding:0 1.25rem 3rem}
+  .demo-card-header{flex-direction:column}
+  .demo-actions{flex-direction:row}
+  .demo-embed.open{max-height:500px}
+  .demo-embed iframe{height:460px}
+  footer{padding:1.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">smart<span>flow</span></a>
+  <div class="nav-links">
+    <a href="index.html#leistungen">Leistungen</a>
+    <a href="smartflow-demos.html" class="active">Demos</a>
+    <a href="index.html#ablauf">Ablauf</a>
+    <a href="index.html#kontakt" class="nav-cta">Gespräch buchen</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">Live-Demos</div>
+  <h1>Sehen Sie AI in Aktion</h1>
+  <p>Echte Tools, die wir für Schweizer KMUs gebaut haben – direkt ausprobieren, ohne Installation.</p>
+</div>
+
+<div class="demos-container">
+
+  <!-- Demo 1: Smartflow App (live) -->
+  <div class="demo-card" id="demo-1">
+    <div class="demo-card-header">
+      <div class="demo-meta">
+        <div class="demo-number">Demo 01</div>
+        <div class="demo-title">Smartflow App Demo</div>
+        <div class="demo-desc">Entdecken Sie unsere KMU-Lösung direkt im Browser – keine Installation, keine Registrierung nötig.</div>
+        <div class="demo-badges">
+          <span class="badge badge-live">● Live</span>
+        </div>
+      </div>
+      <div class="demo-actions">
+        <a href="https://nifty-smart-flow-home.base44.app" target="_blank"><button class="btn-open">In neuem Tab →</button></a>
+        <button class="btn-toggle" onclick="toggleDemo('embed-1', this)">Einbetten ↓</button>
+      </div>
+    </div>
+    <div class="demo-embed" id="embed-1">
+      <iframe
+        src="https://nifty-smart-flow-home.base44.app"
+        title="Smartflow App Demo"
+        loading="lazy"
+        allow="clipboard-write">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Placeholder 2 -->
+  <div class="demo-card placeholder">
+    <div class="demo-placeholder-body">
+      <div class="placeholder-icon">💬</div>
+      <div class="placeholder-text">
+        <h3>Demo 02 – Chatbot für Kundenfragen</h3>
+        <p>Bald verfügbar · Automatisierter Kundensupport für KMUs</p>
+      </div>
+      <span class="badge badge-soon" style="margin-left:auto;flex-shrink:0">Demnächst</span>
+    </div>
+  </div>
+
+  <!-- Placeholder 3 -->
+  <div class="demo-card placeholder">
+    <div class="demo-placeholder-body">
+      <div class="placeholder-icon">⚙️</div>
+      <div class="placeholder-text">
+        <h3>Demo 03 – Prozessanalyse mit AI</h3>
+        <p>Bald verfügbar · Schwachstellen in Abläufen automatisch erkennen</p>
+      </div>
+      <span class="badge badge-soon" style="margin-left:auto;flex-shrink:0">Demnächst</span>
+    </div>
+  </div>
+
+  <!-- Placeholder 4 -->
+  <div class="demo-card placeholder">
+    <div class="demo-placeholder-body">
+      <div class="placeholder-icon">📊</div>
+      <div class="placeholder-text">
+        <h3>Demo 04 – Daten-Dashboard</h3>
+        <p>Bald verfügbar · Ihre Geschäftsdaten auf einen Blick</p>
+      </div>
+      <span class="badge badge-soon" style="margin-left:auto;flex-shrink:0">Demnächst</span>
+    </div>
+  </div>
+
+  <!-- Placeholder 5 -->
+  <div class="demo-card placeholder">
+    <div class="demo-placeholder-body">
+      <div class="placeholder-icon">🔍</div>
+      <div class="placeholder-text">
+        <h3>Demo 05 – Dokumenten-Assistent</h3>
+        <p>Bald verfügbar · Verträge und Dokumente automatisch zusammenfassen</p>
+      </div>
+      <span class="badge badge-soon" style="margin-left:auto;flex-shrink:0">Demnächst</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">smart<span>flow</span></div>
+  <div class="footer-contact">
+    <a href="mailto:demo.test@gmail.com">demo.test@gmail.com</a>
+    <a href="tel:+41766474142">099 999 99 99</a>
+    <span>Eveline Schüpbach</span>
+  </div>
+  <p>© 2025 Eveline Schüpbach Consulting · Schweiz</p>
+  <p>Datenschutz · Impressum</p>
+</footer>
+
+<script>
+function toggleDemo(embedId, btn) {
+  const embed = document.getElementById(embedId);
+  const isOpen = embed.classList.contains('open');
+  embed.classList.toggle('open');
+  btn.textContent = isOpen ? 'Einbetten ↓' : 'Einbetten ↑';
+}
+</script>
+
+</body>
+</html>
